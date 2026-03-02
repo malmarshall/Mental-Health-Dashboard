@@ -1,70 +1,44 @@
-# Mental-Health-Dashboard
+# Overview
 
-## Project structure
+When gaining my MPH, there was a lot of focus on data analytics and epidemiological trends. One topic that comes up a lot is mental health and social determinants of health. This project was creted out of a curiosity about mental health care and access in the rest of the world. Additionally, I wanted to take a deeper dive into the skills that I've learned and apply them to something personally relevant to me. 
 
+# The Questions
 
-mental-health-dashboard/
-│
-├── data/                # raw CSV files (OWID, SAMHSA, CDC)
-├── sql/                 # SQL scripts for creating tables + queries
-├── notebooks/           # Jupyter notebooks for exploration
-├── dashboard/           # Streamlit or Dash app files
-├── README.md            # project overview
-└── requirements.txt     # Python dependencies
+Below are the questions I hoped to answer in this project:
 
-## Roadmap to Analyzing Data
+- OWID (Global Mental Illness Prevalence)
+  1. How does it compare to other countries?
+  2.  What are the global trends in depression and anxiety?
+- CDC (Mental Health Care in Last 4 Weeks)
+  1. Who is receiving mental health services?
+  2. What demographic groups are over- or under- represented?
+- CDC (U.S. Mental Health Indicators)
+  1. How do mental health symptoms trend over time?
+  2. What are the behavioral or social determinants?
+  3. How does mental health vary by state?
+  
+# Tools I used
 
-### Phase 1: Define the purpose of each dataset
+In order to perform a thorough analysis of the data, I utilized several tools:
 
-    1. OWID (Global Mental Illness Prevalence)
-        How does it compare to other countries?
-        What are the global trends in depression, anxiety, suicide rates?
-    2. CDC (Mental Health Care in Last 4 Weeks)
-        Who is receiving mental health services?
-        What demographic groups are over- or under- represented?
-    3. CDC (U.S. Mental Health Indicators)
-        How do mental health symptoms trend over time?
-        What are the behavioral or social determinants?
-        How does mental health vary by state?
+- **Python:**
+      - **Pandas Library:**
+      - **Matplotlib Library:**
+      - **Seaborn Library:**
+- **Jupyter Notebooks:**
+- **Visual Studio Code:**
+- **Git & GitHub:** 
 
-### Phase 2: Build the SQL Database Structure
-     * Three separate tables, not one merged structure
+# Data Preperation and Cleanup
+# The Analysis 
+# What I Learned
+# Insights
+# Challenges I Faced
 
-### Phase 3: Load Data in SQL
-### Phase 4: Write SQL Queries for Each Dataset
-    * OWID: Compare U.S. vs Global
-    * CDC: Mental Health Care in Last 4 Weeks
-    * CDC: State-level Indicators 
-### Phase 5: Analyze in Python 
-    *Use:
-        *Pandas for data manipulations
-        *Plotly for charts
-        *Streamlit or Dash for the dashboard 
-### Phase 6: Build the Dashboard Structure
-    * Three tabs:
-        * Tab 1: Global Mental Health
-            *U.S. vs. gloabl line chart
-            *Choropleth map
-            *Top 10 countries with the highest prevalence
-        * Tab 2: U.S. Treatment Patterns (CDC)
-            *Demographics of clients
-            *Diagnoses distribution
-            *Services used
-        * Tab 3: U.S. Mental Health Indicators (CDC)
-            *State-level heatmap
-            *Trends over time
-            *Social determinants
-### Phase 7: Add Interpretation Panels
-    * For each tab, include:
-        *Key findings
-        *Public health implications
-        *Limitations (e.g., different years, different methodologies)
-### Phase 8: Package for Your Portfolio
-    *Include:
-        *A GitHub Repo
-        *A README explaining your methods
-        *A deployed dashboard
-        *A resume bullet
-        
+For my first coding project, I faced a number of different obstacles:
 
+- **Finding Datasets**: Despite the topic's popularity, finding easily accesible datasets that provided the information I was looking for proved to be quite a challenge.
+- **Unfamiliar Data Visualization Tools**: While I understood the basics of python programming, my knowledge of libraries available was mostly limited to pandas and matplotlib. This project also integrated seaborn, numpy, and a few other libraries that I wasn't as familiar with
+- **Prioritizing Insights:**
 
+# Conclusion
