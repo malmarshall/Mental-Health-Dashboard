@@ -27,7 +27,8 @@ In order to perform a thorough analysis of the data, I utilized several tools:
       - **Seaborn Library:**
 - **Jupyter Notebooks:**
 - **Visual Studio Code:**
-- **Git & GitHub:** 
+- **Git & GitHub:**
+- **Database & Analysis Tools:** PostgreSQL 
 
 # Data Preperation and Cleanup
 # The Analysis 
@@ -39,6 +40,6 @@ For my first coding project, I faced a number of different obstacles:
 
 - **Finding Datasets**: Despite the topic's popularity, finding easily accesible datasets that provided the information I was looking for proved to be quite a challenge.
 - **Unfamiliar Data Visualization Tools**: While I understood the basics of python programming, my knowledge of libraries available was mostly limited to pandas and matplotlib. This project also integrated seaborn, numpy, and a few other libraries that I wasn't as familiar with
-- **Prioritizing Insights:**
+- **Prioritizing Insights:**Once I was able to find appropriate datasets, there was a large wealth of information available for me to extract and use for this project. Rather than include it all, I had to really step back and determine what information would provide the most 'bang for buck'. 
 
 # Conclusion
