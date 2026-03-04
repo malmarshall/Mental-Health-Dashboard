@@ -197,9 +197,13 @@ fig.show()
 
 ## 3. Who is receiving mental health care services?
 
+There were a lot of ways to interpret the data to describe who was receiving mental health care services. Pulling the highest percentage of responses showed that transgender people regularly represented the highest proportion of people taking medication or going to therapy for mental health concerns. 
+
 ### Visualize Data
 ### Results
 ### Interpretation
+
+- 62.9% of 
 
 ## 4. What demographic groups are over- or under-represented?
 
