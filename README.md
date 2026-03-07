@@ -197,7 +197,8 @@ fig.show()
 
 ## 3. Who is receiving mental health care services?
 
-There were a lot of ways to interpret the data to describe who was receiving mental health care services. Pulling the highest percentage of responses showed that transgender people regularly represented the highest proportion of people taking medication or going to therapy for mental health concerns. 
+To answer this question, I utilized the mental health care in the last 4 weeks dataset from the CDC. Upon intial query, I identified a critical mistake in my SQL cleanup. Identifying the top scorers based on value showed that there were multiple responses for similar demographic groups in the same year. Looking at the original dataset, I noted that there was an additional column that further identified these responses by date range (4 week time span across each year). I should have either averaged values within the same date range or left the column untouched and added the column as a groupby variable in my python analysis. I chose the later approach for ease and potential use later on in question 5. 
+
 
 ### Visualize Data
 ### Results
