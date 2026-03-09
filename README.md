@@ -163,7 +163,7 @@ top = (sns.catplot(
 
 ### Results
 
-![Top 10 Countries with Anxiety/Depression](images/
+![Top 10 Countries with Anxiety/Depression](images/Top 10 Countries.png)
 
 ### Interpretation
 
