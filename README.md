@@ -229,6 +229,9 @@ To answer this question, I utilized the mental health care in the last 4 weeks d
 
 ### Visualize Data
 ### Results
+
+![Chloropleth Map](images/mh_care_chloropleth.html)
+
 ### Interpretation
 
 # What I Learned
