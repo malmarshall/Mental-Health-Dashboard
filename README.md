@@ -216,7 +216,14 @@ To answer this question, I utilized the mental health care in the last 4 weeks d
 
 ### Visualize Data
 ### Results
+
+![Indicators Over Time](images/
+
 ### Interpretation
+
+- Indicators were markedly higher based on income level than for any other demographic group. Race/Hispanic ethnicity followed behind in second place. 
+- Across the board, reportings of depression drop around 2016 but then shoot back up in 2018. The steepest trend is observed in the sex stratification, though this line matches almost exactly to the national estimate.
+- Though there are fluctuations in yearly reportings, the line graph shows that depression prevalence is generally on the rise across the 12-year span. 
 
 ## 6. How does mental health vary by state?
 
