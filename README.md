@@ -163,7 +163,7 @@ top = (sns.catplot(
 
 ### Results
 
-![Top 10 Countries with Anxiety/Depression](images/Top10Countries.png)
+![Top 10 Countries with Anxiety/Depression](images/Top_10_Countries.png)
 
 ### Interpretation
 
@@ -217,7 +217,7 @@ To answer this question, I utilized the mental health care in the last 4 weeks d
 ### Visualize Data
 ### Results
 
-![Indicators Over Time](images/Indicators by Year and Demo Group (Line).png)
+![Indicators Over Time](images/Line_Indicators_by_Year_and_Demo_Group.png)
 
 ### Interpretation
 
