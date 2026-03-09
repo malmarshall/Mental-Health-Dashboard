@@ -217,7 +217,7 @@ To answer this question, I utilized the mental health care in the last 4 weeks d
 ### Visualize Data
 ### Results
 
-![Indicators Over Time](images/
+![Indicators Over Time](images/Indicators by Year and Demo Group (Line).png)
 
 ### Interpretation
 
