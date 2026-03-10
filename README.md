@@ -463,6 +463,10 @@ fig.write_html('/workspaces/Mental-Health-Dashboard/notebooks/images/mh_care_chl
 
 ### Interpretation
 
+- The southwestern edge of the country shows the lowest prevalence of mental health care services received, but the highest prevalence of individuals reporting a need for counseling/therapy but not getting it. 
+- West Virgina ranks the highest for both taking prescription medication for mental health and for taking medication and/or receiving counseling/therapy
+- These trends speak volumes on the availability and access to mental health care services that may be available to people throughout the country. No express reasoning explains the trends in the data, but previous research has shown me that the states that rank lower for taking mental health medication and/or receiving counseling/therapy tend to have many contributing factors that include social stigma, lack of knowledge, and distrust or misconceptions about treatment.
+  
 # What I Learned
 # Insights
 
