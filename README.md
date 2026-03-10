@@ -189,6 +189,9 @@ fig.show()
 ```
 
 ### Results
+
+
+
 ### Interpretation
 
 - U.S. prevalence of anxiety/depression in 2020 was at 21.27% (or nearly one in five people). In Peru, where prevalence is highest globally, nearly half of all people experienced anxiety/depression.
@@ -202,9 +205,14 @@ To answer this question, I utilized the mental health care in the last 4 weeks d
 
 ### Visualize Data
 ### Results
+
+![Mental Health Care Heatmap](images/mh_care_heatmap.html)
+
 ### Interpretation
 
-- 62.9% of 
+- The largest demographic of individuals receiving mental health care services are those who identify as Transgender. On average, nearly 55% of transgender individuals took prescription medication or received counseling or therapy for mental health concerns. 
+- Those who identified as disabled also showed extremely high prevalence of depression at nearly 47%
+- 
 
 ## 4. What demographic groups are over- or under-represented?
 
