@@ -190,7 +190,7 @@ fig.show()
 
 ### Results
 
-
+![Global Mental Health Prevalence in 2020](image/global_owid.html)
 
 ### Interpretation
 
@@ -318,6 +318,8 @@ heat.write_html('/workspaces/Mental-Health-Dashboard/notebooks/images/mh_care_he
 - 
 
 ## 4. What demographic groups are over- or under-represented?
+
+To answer this question, I took a count of the total number of responses based on each subgroup and compared them to determine if there were any obvious discrepancies between the indicators data and the mental health care data. 
 
 ### Visualize Data
 ### Results
