@@ -322,7 +322,31 @@ heat.write_html('/workspaces/Mental-Health-Dashboard/notebooks/images/mh_care_he
 To answer this question, I took a count of the total number of responses based on each subgroup and compared them to determine if there were any obvious discrepancies between the indicators data and the mental health care data. 
 
 ### Visualize Data
+
+```python
+race = (sns.catplot(
+    data=race_pivot, order=['Native Hawaiian/Pacific Islander','American Indian/Alaskan','Black','Hispanic','White','Multiracial','Other','Asian'],
+    x='subgroup',
+    y='ind_count',
+    hue='subgroup',
+    kind='bar',
+    dodge=False,
+    legend=False,
+    palette='PuBu')
+    .set_xticklabels(
+        rotation=45,
+        ha='right')
+    .set_axis_labels(
+        'Race/Hispanic Ethnicity',
+        'Number of Responses')
+    .figure.suptitle(
+        'Indicator Responses by Race',
+        y=1.05))
+```
 ### Results
+
+![CDC Indicators by Race Distribution](images/race_indicators.png)
+
 ### Interpretation
 - The CDC mental health care dataset showed that the number of responses for each demographic group was relatively the same with minimal fluctuation.
 - The CDC indicators dataset showed large amounts of variation in total responses primarily when it came to race 
