@@ -190,7 +190,7 @@ fig.show()
 
 ### Results
 
-![Global Mental Health Prevalence in 2020](image/global_owid.html)
+![Global Anxiety/Depression Prevalence in 2020](image/global_owid.html)
 
 ### Interpretation
 
@@ -324,6 +324,8 @@ To answer this question, I took a count of the total number of responses based o
 ### Visualize Data
 ### Results
 ### Interpretation
+- The CDC mental health care dataset showed that the number of responses for each demographic group was relatively the same with minimal fluctuation.
+- The CDC indicators dataset showed large amounts of variation in total responses primarily when it came to race 
 
 ## 5. How do mental health symptoms trend over time?
 
