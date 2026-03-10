@@ -319,7 +319,7 @@ heat.write_html('/workspaces/Mental-Health-Dashboard/notebooks/images/mh_care_he
 
 ## 4. What demographic groups are over- or under-represented?
 
-To answer this question, I took a count of the total number of responses based on each subgroup and compared them to determine if there were any obvious discrepancies between the indicators data and the mental health care data. 
+Initially, I used both the the mh_care and indicators datasets from the CDC to compare distribution based on number of responses before demographic group and subgroup. During this step, it was discovered very quickly that the mh_care dataset is relatively uniform across all demographic groups with minor fluctuations across a few subgroups. The indicators dataset, however, showed the largest variation in total number of responses in the 'Race/Hispanic ethnicity' subgroup. Income also showed a large amount of fluctuation, but I chose to focus on race for the purposes of this question. 
 
 ### Visualize Data
 
@@ -348,8 +348,10 @@ race = (sns.catplot(
 ![CDC Indicators by Race Distribution](images/race_indicators.png)
 
 ### Interpretation
-- The CDC mental health care dataset showed that the number of responses for each demographic group was relatively the same with minimal fluctuation.
-- The CDC indicators dataset showed large amounts of variation in total responses primarily when it came to race 
+- Across all demographic subgroups, the average number of responses is 579 (will be referred to as the demographic average). For the Race/Hispanic ethnicity subgroup, this average is lowered to 416 (will be referred to as the subgroup average). 
+- Native Hawaiian/Pacific Islanders stray furthest from both the demographic and subgroup average with only 21 responses. American Indian/Alaskan, Asian, and Other racial groups also fail to meet either threshold, though these groups have at least 150 responses.
+- Blacks have more responses than the subgroup average, but slightly less than the demographic average at 557 responses. 
+- Whites, Hispanics, and Multiracial individuals all have responses above the demographic and subgroup average by significant amounts. 
 
 ## 5. How do mental health symptoms trend over time?
 
