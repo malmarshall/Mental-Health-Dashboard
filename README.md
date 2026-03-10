@@ -468,6 +468,13 @@ fig.write_html('/workspaces/Mental-Health-Dashboard/notebooks/images/mh_care_chl
 - These trends speak volumes on the availability and access to mental health care services that may be available to people throughout the country. No express reasoning explains the trends in the data, but previous research has shown me that the states that rank lower for taking mental health medication and/or receiving counseling/therapy tend to have many contributing factors that include social stigma, lack of knowledge, and distrust or misconceptions about treatment.
   
 # What I Learned
+
+Throughout this project, I learned about mental health and mental healthcare trends in America, while also taking a look at how this compares on a global scale. I also enhanced my technical skills in SQL and Python, especially in regards to data manipulation and visualization. More specifically, I learned:
+
+- **Advanced Python Usage:** Python libraries such as Pandas, Seaborn, and Pyplot really helped me in the manipulation and visualization of datasets. Not only were these efficient for my purposes, I became more skilled at reading/understanding API References for each library to help understand how to perform the manipulation or visualization to a level acceptable to me. 
+- **Workflow Optimization:** A lot of my time with these datasets inlcuded performing unecessary or pointless cleaning and manipulation steps that didn't help me get to the answers I was looking for. While I appreciate the extra practice I gained, a lot of time was added to this project due to this. I learned to clearly identify the questions I want to answer and *how* I want to answer them before continuing to data visualization and additional manipulation after cleaning and exploration.
+- **
+
 # Insights
 
 
