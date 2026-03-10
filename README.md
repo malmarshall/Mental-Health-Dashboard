@@ -204,6 +204,109 @@ To answer this question, I utilized the mental health care in the last 4 weeks d
 
 
 ### Visualize Data
+
+```python
+# Creates Figure
+heat = go.Figure()
+
+#Adds traces for each subgroup
+
+heat.add_trace(
+    go.Heatmap(
+        z=age_demo.value, 
+        x=age_demo.subgroup, 
+        y=age_demo.indicator, 
+        colorscale='Viridis', 
+        name='Age Demographics'))
+
+heat.add_trace(
+    go.Heatmap(
+        z=disability_demo.value, 
+        x=disability_demo.subgroup, 
+        y=disability_demo.indicator, 
+        colorscale='Plasma', 
+        name='Pesence of Disability', 
+        visible=False))
+
+heat.add_trace(
+    go.Heatmap(
+        z=edu_demo.value,
+        x=edu_demo.subgroup,
+        y=edu_demo.indicator,
+        colorscale='darkmint',
+        visible=False
+    )
+)
+
+heat.add_trace(
+    go.Heatmap(
+        z=gender_demo.value,
+        x=gender_demo.subgroup,
+        y=gender_demo.indicator,
+        colorscale='brwnyl',
+        name='Gender Identity',
+        visible=False
+    )
+)
+
+heat.add_trace(
+    go.Heatmap(
+        z=sex_demo.value,
+        x=sex_demo.subgroup,
+        y=sex_demo.indicator,
+        colorscale='darkmint',
+        visible=False
+    )
+)
+heat.add_trace(
+    go.Heatmap(
+        z=orient_demo.value,
+        x=orient_demo.subgroup,
+        y=orient_demo.indicator,
+        colorscale='haline',
+        visible=False
+    )
+)
+
+heat.add_trace(
+    go.Heatmap(
+        z=race_demo.value,
+        x=race_demo.subgroup,
+        y=race_demo.indicator,
+        colorscale='agsunset',
+        visible=False
+    )
+)
+
+#Create Dropdown Menu
+buttons = []
+for i, group in enumerate(['Age', 'Disability Status', 'Education', 'Gender Identity', 'Sex', 'Sexual Orientation', 'Race']):
+    # Define visibility: True for selected group, False for others
+    visibility = [False] * 7
+    visibility[i] = True
+    
+    button = dict(
+        label=group,
+        method='restyle',
+        args=[{'visible': visibility}]
+    )
+    buttons.append(button)
+
+# 4. Update layout with buttons
+heat.update_layout(
+    updatemenus=[dict(
+        active=0,
+        buttons=buttons,
+        direction='down',
+        x=0.1, y=1.15
+    )],
+    title="Mental Health Indicators by Demographic Group"
+)
+
+heat.show()
+
+heat.write_html('/workspaces/Mental-Health-Dashboard/notebooks/images/mh_care_heatmap.html')
+```
 ### Results
 
 ![Mental Health Care Heatmap](images/mh_care_heatmap.html)
@@ -223,6 +326,25 @@ To answer this question, I utilized the mental health care in the last 4 weeks d
 ## 5. How do mental health symptoms trend over time?
 
 ### Visualize Data
+
+```python
+y = sns.lineplot(
+    data=indicators_true_df,
+    x='year',
+    y='value',
+    hue='demo_group',
+    errorbar=None)
+
+y.set(
+    xlabel='Survey Year',
+    ylabel='Depression Prevalence (%)',
+    title='Yearly Indicators Stratified by Demographic Group'
+)
+
+y=sns.move_legend(
+    y, "upper left",
+    bbox_to_anchor=(1,1))
+```
 ### Results
 
 ![Indicators Over Time](images/Line_Indicators_by_Year_and_Demo_Group.png)
@@ -236,6 +358,75 @@ To answer this question, I utilized the mental health care in the last 4 weeks d
 ## 6. How does mental health vary by state?
 
 ### Visualize Data
+
+```python
+# Returns the list of indicators 
+indicators = mhcare_state_pivot['indicator'].unique()
+indicators
+
+
+# Builds one choropleth trace per indicator 
+fig = go.Figure()
+
+for i, ind in enumerate(indicators):
+    df_ind = mhcare_state_pivot[mhcare_state_pivot['indicator'] == ind]
+
+    fig.add_trace(
+        go.Choropleth(
+            locations=df_ind['subgroup'],
+            z=df_ind['value'].astype(float),
+            locationmode='USA-states',
+            colorscale='Greens',
+            colorbar_title='Value',
+            visible=True if i == 0 else False,
+            name = ind,
+            text=(
+                'State: ' + df_ind['subgroup'] +
+                '<br>Value: '+df_ind['value'].round(2).astype(str) +
+                '<br>Low CI: '+df_ind['low_ci'].round(2).astype(str) +
+                '<br>High CI: '+ df_ind['high_ci'].round(2).astype(str)
+            ),
+            hoverinfo='text+z'
+        )
+    )
+
+# Creates a dropdown menu to toggle between indicators 
+
+buttons = []
+for i, ind in enumerate(indicators):
+    visible = [False] * len(indicators)
+    visible[i] = True
+
+    buttons.append(
+        dict(
+            label=ind,
+            method='update',
+            args=[
+                {'visible': visible},
+                {'title': f'{ind} by State'}
+            ]
+        )
+    )
+
+# Attaches the dropdown to the figure
+
+fig.update_layout(
+    updatemenus=[
+        dict(
+            active=0,
+            buttons=buttons,
+            x=0.0,
+            y=1.15,
+            xanchor='left',
+            yanchor='top'
+        )
+    ],
+    title_text=f'{indicators[0]} by State',
+    geo_scope='usa'
+)
+
+fig.write_html('/workspaces/Mental-Health-Dashboard/notebooks/images/mh_care_chloropleth.html')
+```
 ### Results
 
 ![Chloropleth Map](images/mh_care_chloropleth.html)
