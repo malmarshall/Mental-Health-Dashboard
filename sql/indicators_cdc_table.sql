@@ -90,5 +90,5 @@ ALTER COLUMN value SET NOT NULL;
 
 SELECT *
 FROM indicators_cdc
-ORDER BY year DESC, value DESC;
+ORDER BY year DESC, value;
 
