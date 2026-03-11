@@ -19,10 +19,9 @@ In order to perform a thorough analysis of the data, I utilized several tools:
 
 - **SQL**: The backbone for my data analysis and cleaning steps. This was used to develop initial insights and observations.
 - **Python:** Use primarily for developing visualizations using the following libraries:
-  
-      - **Pandas Library:** Used to analyze the data and perform any additional transformations.
-      - **Seaborn Library:** I used this to develop static visualizations (Bar and Line graphs).
-      - **Plotly Library:** This was used for interactive visualizations (Chloropleth and heat maps).
+    - **Pandas Library:** Used to analyze the data and perform any additional transformations.
+    - **Seaborn Library:** I used this to develop static visualizations (Bar and Line graphs).
+    - **Plotly Library:** This was used for interactive visualizations (Chloropleth and heat maps).
 - **Jupyter Notebooks:** The tool used for running my Python scripts.
 - **PostgreSQL:** The database management system chosen to handle the large datasets that I planned to utilize
 - **Visual Studio Code:** My go-to for executing SQL and Python codes.
