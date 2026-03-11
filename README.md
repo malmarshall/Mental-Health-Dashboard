@@ -209,7 +209,7 @@ To answer this question, I utilized the mental health care in the last 4 weeks d
 # Creates Figure
 heat = go.Figure()
 
-#Adds traces for each subgroup
+#Adds traces for each subgroup 
 
 heat.add_trace(
     go.Heatmap(
@@ -228,55 +228,7 @@ heat.add_trace(
         name='Pesence of Disability', 
         visible=False))
 
-heat.add_trace(
-    go.Heatmap(
-        z=edu_demo.value,
-        x=edu_demo.subgroup,
-        y=edu_demo.indicator,
-        colorscale='darkmint',
-        visible=False
-    )
-)
-
-heat.add_trace(
-    go.Heatmap(
-        z=gender_demo.value,
-        x=gender_demo.subgroup,
-        y=gender_demo.indicator,
-        colorscale='brwnyl',
-        name='Gender Identity',
-        visible=False
-    )
-)
-
-heat.add_trace(
-    go.Heatmap(
-        z=sex_demo.value,
-        x=sex_demo.subgroup,
-        y=sex_demo.indicator,
-        colorscale='darkmint',
-        visible=False
-    )
-)
-heat.add_trace(
-    go.Heatmap(
-        z=orient_demo.value,
-        x=orient_demo.subgroup,
-        y=orient_demo.indicator,
-        colorscale='haline',
-        visible=False
-    )
-)
-
-heat.add_trace(
-    go.Heatmap(
-        z=race_demo.value,
-        x=race_demo.subgroup,
-        y=race_demo.indicator,
-        colorscale='agsunset',
-        visible=False
-    )
-)
+# Remaining Traces to be found in full Notebook
 
 #Create Dropdown Menu
 buttons = []
@@ -473,10 +425,13 @@ Throughout this project, I learned about mental health and mental healthcare tre
 
 - **Advanced Python Usage:** Python libraries such as Pandas, Seaborn, and Pyplot really helped me in the manipulation and visualization of datasets. Not only were these efficient for my purposes, I became more skilled at reading/understanding API References for each library to help understand how to perform the manipulation or visualization to a level acceptable to me. 
 - **Workflow Optimization:** A lot of my time with these datasets inlcuded performing unecessary or pointless cleaning and manipulation steps that didn't help me get to the answers I was looking for. While I appreciate the extra practice I gained, a lot of time was added to this project due to this. I learned to clearly identify the questions I want to answer and *how* I want to answer them before continuing to data visualization and additional manipulation after cleaning and exploration.
-- **
+- **Mental Health Trends in America:** Understanding how mental health and healthcare in America has been trending in the past few years (especially since the COVID-19) pandemic and deriving insights based on state-level data can help understand the current state of care and inform decision making for the future. 
 
 # Insights
 
+This project helped generate several insights for mental health practitioners in particular into the state :
+- Mental Health Trends: 
+- 
 
 # Challenges I Faced
 
@@ -487,3 +442,5 @@ For my first coding project, I faced a number of different obstacles:
 - **Prioritizing Insights**: Once I was able to find appropriate datasets, there was a large wealth of information available for me to extract and use for this project. Rather than include it all, I had to really step back and determine what information would provide the most 'bang for buck'. 
 
 # Conclusion
+
+The exploration of mental health and mental healthcare trends in America has been extremely informative, deepening my knowledge of a topic that has always been interesting to me. 
