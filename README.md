@@ -192,7 +192,7 @@ fig.show()
 
 ### Results
 
-![Global Anxiety/Depression Prevalence in 2020](image/global_owid.html)
+[![Global Anxiety/Depression Prevalence in 2020](docs/thumbnails/global_owid_thumb.png)](image/global_owid.html)
 
 ### Interpretation
 
@@ -263,7 +263,7 @@ heat.write_html('/workspaces/Mental-Health-Dashboard/notebooks/images/mh_care_he
 ```
 ### Results
 
-![Mental Health Care Heatmap](images/mh_care_heatmap.html)
+[![Mental Health Care Heatmap](docs/thumbnails/mh_heat_thumb.png)](images/mh_care_heatmap.html)
 
 ### Interpretation
 
@@ -416,7 +416,7 @@ fig.write_html('/workspaces/Mental-Health-Dashboard/notebooks/images/mh_care_chl
 ```
 ### Results
 
-![Chloropleth Map](images/mh_care_chloropleth.html)
+[![State-Level Chloropleth Map](docs/thumbnails/mh_state_thumb.png)](images/mh_care_chloropleth.html)
 
 ### Interpretation
 
