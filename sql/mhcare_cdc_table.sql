@@ -31,6 +31,11 @@ SELECT *
 FROM mh_care_cdc
 LIMIT 10;
 
+--Adds a primary key to the mh_care_cdc for better data integrity and to facilitate efficient querying and analysis in the Mental Health Dashboard.
+
+ALTER TABLE mh_care_cdc
+ADD COLUMN id SERIAL PRIMARY KEY;
+
 -- Removal of null values and exploration of data
 
 SELECT *
@@ -52,13 +57,12 @@ FROM mh_care_cdc;
 
 ALTER TABLE mh_care_cdc
 DROP COLUMN supp_flag, 
+DROP COLUMN phase,
+DROP COLUMN con_int,
 DROP COLUMN time_start,
 DROP COLUMN time_end,
-DROP COLUMN phase,
+DROP COLUMN time_period,
 DROP COLUMN state;
-
-ALTER TABLE mh_care_cdc
-DROP COLUMN time_period;
 
 ALTER TABLE mh_care_cdc
 RENAME COLUMN "group" TO demo_group;
@@ -67,10 +71,6 @@ ALTER TABLE mh_care_cdc
 ALTER COLUMN low_ci TYPE double precision USING low_ci::double precision,
 ALTER COLUMN high_ci TYPE double precision USING high_ci::double precision,
 ALTER COLUMN value TYPE double precision USING value::double precision;
-
-ALTER TABLE mh_care_cdc
-DROP COLUMN con_int,
-DROP COLUMN quart_range;
 
 SELECT *
 FROM mh_care_cdc
@@ -84,33 +84,16 @@ ADD COLUMN year INTEGER;
 UPDATE mh_care_cdc
 SET year = RIGHT(time_period_label, 4)::INTEGER;
 
-SELECT DISTINCT indicator 
-FROM mh_care_cdc;
+--Drops time_period_label column as it is no longer needed after extracting the year for comparison with indicators_cdc table.
+ALTER TABLE mh_care_cdc
+DROP COLUMN time_period_label;
 
-SELECT 
-    indicator,
-    CASE 
-        WHEN indicator = 'Took Prescription Medication for Mental Health, Last 4 Weeks' THEN 'took_prescription'
-        WHEN indicator = 'Received Counseling or Therapy, Last 4 Weeks' THEN 'saw_therapist'
-        WHEN indicator = 'Needed Counseling or Therapy But Did Not Get It, Last 4 Weeks' THEN 'needed_therapy_did_not_get'
-        WHEN indicator = 'Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks' THEN 'meds_and_or_therapy'
-        ELSE indicator
-    END AS indicator_clean
-FROM mh_care_cdc;
+--Adds not null constraint to the column to ensure that all records have a valid year value for accurate analysis and comparison with the indicators_cdc table in the Mental Health Dashboard.
 
--- Update the indicator column with cleaned values
-
-UPDATE mh_care_cdc
-SET indicator = CASE 
-    WHEN indicator = 'Took Prescription Medication for Mental Health, Last 4 Weeks' THEN 'took_prescription'
-    WHEN indicator = 'Received Counseling or Therapy, Last 4 Weeks' THEN 'saw_therapist'
-    WHEN indicator = 'Needed Counseling or Therapy But Did Not Get It, Last 4 Weeks' THEN 'needed_therapy_did_not_get'
-    WHEN indicator = 'Took Prescription Medication for Mental Health And/Or Received Counseling or Therapy, Last 4 Weeks' THEN 'meds_and_or_therapy'
-    ELSE indicator
-END;           
-
-SELECT *
-FROM mh_care_cdc;
+ALTER TABLE mh_care_cdc
+ALTER COLUMN indicator SET NOT NULL,
+ALTER COLUMN demo_group SET NOT NULL,
+ALTER COLUMN value SET NOT NULL;
 
 -- Determine if ci values are percentages and convert if necessary
 
@@ -127,23 +110,6 @@ SELECT indicator, demo_group, subgroup, time_period_label, COUNT(*)
 FROM mh_care_cdc
 GROUP BY indicator, demo_group, subgroup, time_period_label
 HAVING COUNT(*) > 1;
-
-
---Adds a primary key to the mh_care_cdc for better data integrity and to facilitate efficient querying and analysis in the Mental Health Dashboard.
-
-ALTER TABLE mh_care_cdc
-ADD COLUMN id SERIAL PRIMARY KEY;
-
---Drops time_period_label column as it is no longer needed after extracting the year for comparison with indicators_cdc table.
-ALTER TABLE mh_care_cdc
-DROP COLUMN time_period_label;
-
---Adds not null constraint to the column to ensure that all records have a valid year value for accurate analysis and comparison with the indicators_cdc table in the Mental Health Dashboard.
-
-ALTER TABLE mh_care_cdc
-ALTER COLUMN indicator SET NOT NULL,
-ALTER COLUMN demo_group SET NOT NULL,
-ALTER COLUMN value SET NOT NULL;
 
 -- Final check of the mh_care_cdc after all transformations and cleaning steps to ensure that the data is ready for analysis and visualization in the Mental Health Dashboard.
 
