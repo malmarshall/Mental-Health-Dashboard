@@ -1,6 +1,6 @@
 # Overview
 
-When gaining my MPH, there was a lot of focus on data analytics and epidemiological trends. One topic that comes up a lot is mental health and social determinants of health. This project was creted out of a curiosity about mental health care and access in the rest of the world. Additionally, I wanted to take a deeper dive into the skills that I've learned and apply them to something personally relevant to me. 
+When gaining my MPH, there was a lot of focus on data analytics and epidemiological trends. One topic that comes up a lot is mental health and social determinants of health. This project was created out of a curiosity about mental health care and access in the rest of the world. Additionally, I wanted to take a deeper dive into the skills that I've learned and apply them to something personally relevant to me. 
 
 # The Questions
 
