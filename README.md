@@ -17,14 +17,15 @@ Below are the questions I hoped to answer in this project:
 
 In order to perform a thorough analysis of the data, I utilized several tools:
 
-- **Python:**
-      - **Pandas Library:**
-      - **Matplotlib Library:**
-      - **Seaborn Library:**
-- **Jupyter Notebooks:**
-- **Visual Studio Code:**
-- **Git & GitHub:**
-- **Database & Analysis Tools:** PostgreSQL 
+- **SQL**: The backbone for my data analysis and cleaning steps. This was used to develop initial insights and observations.
+- **Python:** Use primarily for developing visualizations using the following libraries:
+      - **Pandas Library:** Used to analyze the data and perform any additional transformations.
+      - **Seaborn Library:** I used this to develop static visualizations (Bar and Line graphs).
+      - **Plotly Library:** This was used for interactive visualizations (Chloropleth and heat maps).
+- **Jupyter Notebooks:** The tool used for running my Python scripts.
+- **PostgreSQL:** The database management system chosen to handle the large datasets that I planned to utilize
+- **Visual Studio Code:** My go-to for executing SQL and Python codes.
+- **Git & GitHub:** Essential for version control and sharing my codes and analysis, ensuring collaboration and project tracking.
 
 # Data Preparation and Cleanup
 
@@ -139,10 +140,9 @@ Here's how I approached each question:
 
 ## 1. Where is mental illness most prevalent across the globe?
 
-To determine the highest prevalence of mental illness globally, I filtered the global_owid data for the largest 10 values and included a column to round to the nearest hundreth for percentage estimation. 
+To determine the highest prevalence of mental illness globally, I filtered the global_owid data for the largest 10 percentages based on country, while also keeping a separate record of each country's classification (lower-middle income, high-income, etc.).
 
 ### Visualize Data
-
 ```python
 top = (sns.catplot(
     top_10,
@@ -167,11 +167,13 @@ top = (sns.catplot(
 
 ### Interpretation
 
-- Peru saw the highest prevalence of anxiety/depression at 49.35%
+- Peru saw the highest prevalence of anxiety/depression at 49.35%.
 - Countries with the highest prevalence of Anxiety/Depression fall under the 'upper-middle-income' and 'lower-middle-income' country classification. This is surprising to me, because it does not trend in a way that I would have expected (where lower-income countries would have the highest rates of Anxiety/Depression). 
 - This data reflects reportings from 2020, when the COVID-19 pandemic was at its peak. The authors were unable to comment how much this may have affected the results or in what ways, but it's important to note since lockdown restrictions may have caused increased feelings of isolation and anxiety.
 
 ## 2. How does mental illness in the U.S. compare?
+
+To see how mental illness compares globally, I decided to create a Chloropleth map for an interactive visual representation of the dataset.
 
 ### Visualize Data
 
@@ -194,13 +196,13 @@ fig.show()
 
 ### Interpretation
 
-- U.S. prevalence of anxiety/depression in 2020 was at 21.27% (or nearly one in five people). In Peru, where prevalence is highest globally, nearly half of all people experienced anxiety/depression.
+- U.S. prevalence of anxiety/depression in 2020 was at 21.27% (or nearly one in five people). In Peru, where prevalence is highest globally, nearly half of all people reported experienced anxiety/depression.
 - The U.S. prevalence matches closely with the worldwide prevalence of 19%
 - This trend is similar to those seen in other high-income countries, though some report closer to one in three people experiencing anxiety/depression.
 
 ## 3. Who is receiving mental health care services?
 
-To answer this question, I utilized the mental health care in the last 4 weeks dataset from the CDC. Upon intial query, I identified a critical mistake in my SQL cleanup. Identifying the top scorers based on value showed that there were multiple responses for similar demographic groups in the same year. Looking at the original dataset, I noted that there was an additional column that further identified these responses by date range (4 week time span across each year). I should have either averaged values within the same date range or left the column untouched and added the column as a groupby variable in my python analysis. I chose the later approach for ease and potential use later on in question 5. 
+To answer this question, I utilized the mental health care in the last 4 weeks dataset from the CDC. Upon intial query, I identified a critical mistake in my SQL cleanup. Identifying the top scorers based on value showed that there were multiple responses for similar demographic groups in the same year. Looking at the original dataset, I noted that there was an additional column that further identified these responses by date range (4 week time span across each year). I should have either averaged values within the same date range or left the column untouched and added the column as a groupby variable in my python analysis. I chose the latter approach for ease and potential use later on in question 5. 
 
 
 ### Visualize Data
@@ -266,8 +268,7 @@ heat.write_html('/workspaces/Mental-Health-Dashboard/notebooks/images/mh_care_he
 ### Interpretation
 
 - The largest demographic of individuals receiving mental health care services are those who identify as Transgender. On average, nearly 55% of transgender individuals took prescription medication or received counseling or therapy for mental health concerns. 
-- Those who identified as disabled also showed extremely high prevalence of depression at nearly 47%
-- 
+- Those who identified as disabled also showed extremely high prevalence of depression at nearly 47%. 
 
 ## 4. What demographic groups are over- or under-represented?
 
@@ -307,6 +308,8 @@ race = (sns.catplot(
 
 ## 5. How do mental health symptoms trend over time?
 
+Because the CDC indicators data includes dates from 2012-2024, I decided to utilize this dataset to visualize the trend over a 12-year span. As I mentioned previously, I used the groupby method to get the average of the values for a each time period and plotted that in a linegraph using seaborn. 
+
 ### Visualize Data
 
 ```python
@@ -338,6 +341,8 @@ y=sns.move_legend(
 - Though there are fluctuations in yearly reportings, the line graph shows that depression prevalence is generally on the rise across the 12-year span. 
 
 ## 6. How does mental health vary by state?
+
+I created another chloropleth map using the CDC indicators dataset to determine state=level values for mental health care. This helped give me a more robust idea of who is actually utilizing mental health care services while also identifying geographical trends. 
 
 ### Visualize Data
 
@@ -427,12 +432,6 @@ Throughout this project, I learned about mental health and mental healthcare tre
 - **Workflow Optimization:** A lot of my time with these datasets inlcuded performing unecessary or pointless cleaning and manipulation steps that didn't help me get to the answers I was looking for. While I appreciate the extra practice I gained, a lot of time was added to this project due to this. I learned to clearly identify the questions I want to answer and *how* I want to answer them before continuing to data visualization and additional manipulation after cleaning and exploration.
 - **Mental Health Trends in America:** Understanding how mental health and healthcare in America has been trending in the past few years (especially since the COVID-19) pandemic and deriving insights based on state-level data can help understand the current state of care and inform decision making for the future. 
 
-# Insights
-
-This project helped generate several insights for mental health practitioners in particular into the state :
-- Mental Health Trends: 
-- 
-
 # Challenges I Faced
 
 For my first coding project, I faced a number of different obstacles:
@@ -443,4 +442,4 @@ For my first coding project, I faced a number of different obstacles:
 
 # Conclusion
 
-The exploration of mental health and mental healthcare trends in America has been extremely informative, deepening my knowledge of a topic that has always been interesting to me. 
+The exploration of mental health and mental healthcare trends in America has been extremely informative, deepening my knowledge of a topic that has always been interesting to me. Not only do the insights I got help me to understand the general trend of mental health in America over time, it painted a picture for the general state of mental health in the country. There were many areas where I could have dived even deeper to see if there were any events that may have correlated with these trends, but that would be mostly speculation on my end. I do feel that there are a lot more insights I could gain utilizing these datasets, but I wanted to leave it here for now so as to not overwhelm myself for my first project. In the future, I would very much like to expand on this information even further. Not only have I gained valuable knowledge about the topic I chose to dedicate this project to, but I've made significant refinements in my coding skills through having to troubleshoot software issues and coding errors. I feel much more confident with my skillset and enjoyed being able to take this knowledge from an academic setting and apply it to real-world information. 
