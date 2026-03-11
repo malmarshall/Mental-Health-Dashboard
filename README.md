@@ -85,9 +85,9 @@ SELECT *
 FROM mh_care_cdc
 ORDER BY year DESC, value DESC;
 ```
-These steps were then repeated for the Depression Indicators dataset and the Global Anxiety/Depression Prevalence dataset. Once I felt comfortable that all necessary cleaning/transformation steps were taken, I then uploaded the datasets to python for visualization. 
+These steps were then repeated for the Depression Indicators dataset and the Global Anxiety/Depression Prevalence dataset. Once I felt comfortable that all necessary cleaning/transformation steps were taken, I then uploaded the datasets to Python for visualization. 
 
-View my notebook with detailed steps here:
+View my SQL notebook with detailed steps here:
   - [mh_care_cdc](mhcare_cdc_table.sql)
   - [indicators_cdc](indicators_cdc_table.sql)
   - [global_owid](global_owid_table.sql)
@@ -129,7 +129,7 @@ mhcare_age_pivot
 ```
 These steps were repeated using each demographic group. The same steps were repeated for the Mental Health Indicators table and the Global Anxiety/Depression Prevalence table. 
 
-Notebook with detailed steps:
+Python notebook with detailed steps:
 - [mh_care_cdc](mh_care.ipynb)
 - [indicators_cdc](indicators_cdc.ipynb)
 - [global_owid](global_owid.ipynb)
