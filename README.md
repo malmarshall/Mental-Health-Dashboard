@@ -16,9 +16,7 @@ A data visualization project exploring global and U.S. mental health trends usin
 - U.S. states in the West and Northeast showed higher rates of mental health treatment.
 - Global mental health burden varies dramatically by region, with clear socioeconomic patterns.
 
-**Live Dashboard:**
-
-**Repository Strucutre:** Notebooks - SQL Scripts - Dashboard Files 
+**Live Dashboard:** [Mental Health Dashboard](https://malmarshall.github.io/Mental-Health-Dashboard/) 
 
 # Overview
 
