@@ -1,6 +1,29 @@
+# Mental Health Analytics Dashboard
+A data visualization project exploring global and U.S. mental health trends using SQP, Python, and interactive dashboards
+
+**Key Skills Demonstrated:**
+- SQL
+- Data Cleaning 
+- Python (Pandas, Plotly, Seaborn) 
+- Data Visualization 
+- Dashboard Design 
+- Exploratory Data Analysis 
+- Storytelling
+
+**Key Insights:**
+- Anxiety and depression rates rose sharply in 2020, with notable demographic disparities.
+- Transgender and multiracial individuals reported the highest mental health care utilization.
+- U.S. states in the West and Northeast showed higher rates of mental health treatment.
+- Global mental health burden varies dramatically by region, with clear socioeconomic patterns.
+
+**Live Dashboard:**
+
+**Repository Strucutre:** Notebooks - SQL Scripts - Dashboard Files 
+
 # Overview
 
 When gaining my MPH, there was a lot of focus on data analytics and epidemiological trends. One topic that comes up a lot is mental health and social determinants of health. This project was created out of a curiosity about mental health care and access in the rest of the world. Additionally, I wanted to take a deeper dive into the skills that I've learned and apply them to something personally relevant to me. 
+
 
 # The Questions
 
@@ -28,7 +51,7 @@ In order to perform a thorough analysis of the data, I utilized several tools:
 - **Git & GitHub:** Essential for version control and sharing my codes and analysis, ensuring collaboration and project tracking.
 
 # Data Preparation and Cleanup
-
+<details>
 This section outlines the steps that I took to clean each dataset for later analysis and visualization, ensuring accuracy and standardization of variables. 
 
 ## SQL
@@ -134,6 +157,8 @@ Python notebook with detailed steps:
 - [indicators_cdc](Notebooks/indicators_cdc.ipynb)
 - [global_owid](Notebooks/global_owid.ipynb)
 
+</details>
+
 # The Analysis 
 
 Here's how I approached each question:
@@ -206,7 +231,6 @@ To answer this question, I utilized the mental health care in the last 4 weeks d
 
 
 ### Visualize Data
-
 ```python
 # Creates Figure
 heat = go.Figure()
@@ -261,6 +285,7 @@ heat.show()
 
 heat.write_html('/workspaces/Mental-Health-Dashboard/notebooks/images/mh_care_heatmap.html')
 ```
+
 ### Results
 
 [![Mental Health Care Heatmap](docs/thumbnails/mh_heat_thumb.png)](docs/mh_care_heatmap.html)
