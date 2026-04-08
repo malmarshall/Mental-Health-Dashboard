@@ -49,7 +49,7 @@ In order to perform a thorough analysis of the data, I utilized several tools:
 - **Git & GitHub:** Essential for version control and sharing my codes and analysis, ensuring collaboration and project tracking.
 
 # Data Preparation and Cleanup
-<details>
+
 This section outlines the steps that I took to clean each dataset for later analysis and visualization, ensuring accuracy and standardization of variables. 
 
 ## SQL
@@ -154,8 +154,6 @@ Python notebook with detailed steps:
 - [mh_care_cdc](Notebooks/mh_care.ipynb)
 - [indicators_cdc](Notebooks/indicators_cdc.ipynb)
 - [global_owid](Notebooks/global_owid.ipynb)
-
-</details>
 
 # The Analysis 
 
