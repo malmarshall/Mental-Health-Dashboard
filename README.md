@@ -1,5 +1,5 @@
 # Mental Health Analytics Dashboard
-A data visualization project exploring global and U.S. mental health trends using SQP, Python, and interactive dashboards
+A data visualization project exploring global and U.S. mental health trends using SQL, Python, and interactive dashboards
 
 **Key Skills Demonstrated:**
 - SQL
