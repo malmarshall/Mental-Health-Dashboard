@@ -1,4 +1,4 @@
-# Mental Health Analytics Dashboard
+# Mental Health Analytics in America
 A data visualization project exploring global and U.S. mental health trends using SQL, Python, and interactive dashboards
 
 **Key Skills Demonstrated:**
